@@ -62,20 +62,44 @@
             golscontra:33
         }];
 
-        // 1.	Lista somente os times cujas vitórias seja maior ou igual que 20
+       // 1.	Lista somente os times cujas vitórias seja maior ou igual que 20
         //
+        console.log("1. Listar times com 20 ou mais vitórias")
+        let maisVitórias = times.filter((time) => {
+            return time.vitorias >= 20
+        })
 
         // 2.	Traga somente os nomes dos times;
         //
+        console.log("2. Traga somente o nome dos times")
+        let timesNome = times.map(m => m.nome)
 
         // 3.	Adicione mais um time chamado Wolves, vitorias 12, empates 8, derrotas 10, gols proprios 38, golscontras 36;
         //
+        console.log("3. Adicione mais time chamado Wolves, 12 vitorias, 8 empates, 10 derrotas, gols proprios 38, golscontra 36")
+        let newTm = {
+            nome: "Wolves",
+            vitorias: 12,
+            empates: 8,
+            derrotas: 10,
+            golsproprio: 38,
+            golscontra: 36
+        }
+        times.push(newTm)
 
         // 4. Mostre o nome e a quantidade de jogos(vitorias, empates e derrotas), quantidade de vitorias, empates e derrotas de um time
         //
+        console.log("4. Mostre o nome e a quantidade de jogos(vitorias, empates e derrotas), quantidade de vitorias, empates e derrotas")
+        let listaTimesStats = times.map(t => {
+            return `Time: ${t.nome} / N°Jogos: ${t.vitorias + t.empates + t.derrotas} / Vitorias: ${t.vitorias} /Empates: ${t.empates} / Derrotas: ${t.derrotas}`
+        })
 
         // 5.	Informe a quantidade de jogos do campeonato;
         //
+        console.log("5. Informe a quantidade de jogos do campeonato;")
+        let quantidadeJogos;
+        let jogosCampeonato = times.map(t => quantidadeJogos = t.vitorias + t.empates + t.derrotas).reduce((total, time) => total + time, 0)
+
     </script>
 
 </body>

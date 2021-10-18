@@ -59,22 +59,45 @@
 
             // 1.	Liste somente os animais cujo tipo seja igual a gato;
             //
+            console.log("1. Liste somente os animais cujo tipo seja igual a gato;")
+            let petGato = pets.filter(pet => {
+                return pet.tipoPet === "gato"
+            })
 
             // 2.	Liste somente os animais cuja idade seja superior a 7;
             //
+            console.log("2. Liste somente os animais cuja idade seja superior a 7;")
+            let petMaiorQue7 = pets.filter(pet => {
+                return pet.idade > 7
+            })
 
             // 3.	Some a idade de todos os pets;
             //
+            console.log("3. Some a idade de todos os pets;")
+            let idadeSomada;
+            let petIdadeSoma = pets.map(p => idadeSomada = p.idade).reduce((total, pet) => total + pet, 0);
             
             // 4.	Traga somente os nomes dos pets;
             //
+            console.log("4. Traga somente os nomes dos pets;")
+            let petNomes = pets.map(p => p.nome)
 
             // 5.	Adicione mais um pet chamado doguinho, cuja idade é igual a 13 e o tipo seja cachorro;
-            console.log('-----------5-----------');
             //
+            console.log("5. Adicione mais um pet chamado doguinho, cuja idade é igual a 13 e o tipo seja cachorro;")
+
+            let novoPet = {
+                nome: "doguinho",
+                idade: 13,
+                tipoPet: "cachorro"
+            }
+            pets.push(newPet)
 
             // 6. Mostre a quantidade de cachorros que possuem na lista
             //
+            console.log("6. Mostre a quantidade de cachorros que possuem na lista")
+            let quantidadeDog = pets.map(p => p.tipoPet === "cachorro").reduce((total, pet) => total + pet, 0);
+
 
     </script>
 
